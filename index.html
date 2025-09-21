@@ -4,92 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Practice Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!--Center-aligned headings-->
-    <h1 style="text-align:center" >Kassymgali Bakytzhan</h1>
-    <h2 style="text-align:center" >About Me</h2> 
-    <h3 style="text-align:center"> SE-2421</h3>
 
-    <!--A paragraph with a description-->
-    <p style="text-align:center"> I’m Bakytzhan Kassymgali, 18 years old from Astana, studying Software Engineering.<br> I work with C++, Python, 
-        and Java, created projects like the Habitty app, and ranked in the top 15 in Kazakhstan 
-        in Samsung’s Big Data Analytics program.<br> In my free time, I go to the gym, read books, and enjoy anime.</p>
+    <!-- Header -->
+    <header class="header-section">
+        <h1 class="header-title">Kassymgali Bakytzhan</h1>
+        <h2 class="header-subtitle">About Me</h2> 
+        <h3 class="header-group">SE-2421</h3>
+    </header>
 
-    <hr> <!-- Horizontal dividing line -->
+    <!-- About -->
+    <section class="card about-section">
+        <p>
+            I’m Bakytzhan Kassymgali, 18 years old from Astana, studying Software Engineering.<br> 
+            I work with C++, Python, and Java, created projects like the Habitty app, and ranked in the top 15 in Kazakhstan 
+            in Samsung’s Big Data Analytics program.<br> 
+            In my free time, I go to the gym, read books, and enjoy anime.
+        </p>
+    </section>
 
-    <!-- Ordered list (numbered) -->
-    <h3>3 hobbies</h3>
-    <ol>
-        <li>Sport</li>
-        <li>Games</li>
-        <li>Movie</li>
-    </ol>
-    <hr>
+    <!-- Hobbies -->
+    <section class="card hobbies-section">
+        <h3>3 hobbies</h3>
+        <ol>
+            <li>Sport</li>
+            <li>Games</li>
+            <li>Movie</li>
+        </ol>
+    </section>
 
-    <!-- An unordered list (bulleted) with links -->
-    <h3>3 favorite websites</h3>
-    <ul>
-        <li><a href="https://du.astanait.edu.kz/">DU</a></li>
-        <li><a href="https://www.youtube.com/"> YouTube</a></li>
-        <li><a href="https://lms.astanait.edu.kz/login/index.php">Lms</a></li>
-    </ul>
-    <hr>
+    <!-- Favorite websites -->
+    <section class="card favorites-section">
+        <h3>3 favorite websites</h3>
+        <ul>
+            <li><a href="https://du.astanait.edu.kz/" target="_blank">DU</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+            <li><a href="https://lms.astanait.edu.kz/login/index.php" target="_blank">LMS</a></li>
+        </ul>
+    </section>
 
-    <!-- Image with alternative text -->
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlo8ECHNQ1C34oB9JVRnY2kTVVH575jhdL81YvMlbxy1AiN8P2eIdXCOlF85p39vNJ6h8&usqp=CAU" alt="cat"> 
-    <br>
-
-    <!-- A button with a link -->
-    <button type="button"> <a href="https://www.youtube.com/watch?v=dLw6aqKbpsg">Click Me! For watch mems with cats</a></button>
-
-    <hr>
+    <!-- Image and button -->
+    <section class="card media-section">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlo8ECHNQ1C34oB9JVRnY2kTVVH575jhdL81YvMlbxy1AiN8P2eIdXCOlF85p39vNJ6h8&usqp=CAU" alt="cat" class="featured-image"> 
+        <a href="https://www.youtube.com/watch?v=dLw6aqKbpsg" target="_blank" class="btn">Watch memes with cats</a>
+    </section>
     
-    <h2 style="text-align:center" > Class Schedule</h2> <!-- Schedule table -->
+    <!-- Schedule -->
+    <section class="card schedule-section">
+        <h2>Class Schedule</h2>
+        <table class="schedule-table">
+            <tr>
+                <th>Lesson</th>
+                <th>Time</th>
+                <th>Classroom</th>
+            </tr>
+            <tr>
+                <td>Web Tech 1</td>
+                <td>16:00</td>
+                <td>C1.1.256k</td>
+            </tr>
+            <tr>
+                <td>DAA</td>
+                <td>17:00</td>
+                <td>C1.2.342K</td>
+            </tr>
+            <tr>
+                <td>OS</td>
+                <td>19:00</td>
+                <td>C1.3.372K</td>
+            </tr>
+        </table>
+    </section>
 
-    <table align="center" border="1" >
-        <tr>
-            <th>Lesson</th>
-            <th>Time</th>
-            <th>Classroom</th>
-        </tr>
-        <tr>
-            <td>Web Tech 1</td>
-            <td>16:00</td>
-            <td>C1.1.256k</td>
-        </tr>
-        <tr>
-            <td>DAA</td>
-            <td>17:00</td>
-            <td>C1.2.342K</td>
-        </tr>
-         <tr>
-            <td>OS</td>
-            <td>19:00</td>
-            <td>C1.3.372K</td>
-        </tr>
+    <!-- Mood -->
+    <section class="card mood-section">
+        <h2>My mood: 😊 😜</h2>
+    </section>
 
-    </table>
+    <!-- Contact -->
+    <section class="card contact-section">
+        <h1>Contact me!</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-    <hr>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-    <h2> My mood:😊 &#128540;</h2> <!-- Emoji -->
+            <label for="color">Choose color:</label>
+            <input type="color" id="color" name="color">
 
-    <h1>Contact me!</h1> <!-- Form -->
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required> <br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required> <br>
-
-        <label for="color">Choose color:</label>
-        <input type="color" id="color" name="color">
-
-        <button type="submit">Submit</button>
-    </form>
-
-
+    <!-- Footer -->
+    <footer class="footer-section">
+        <p>© 2025 Kassymgali</p>
+    </footer>
 
 </body>
 </html>
