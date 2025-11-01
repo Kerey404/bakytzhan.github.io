@@ -1,148 +1,88 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Console info (Task 0 / Task 1)
-  console.log("Name: Бақытжан Қасымғали");
-  console.log("Group: SE-2421");
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
-  const hoverBox = document.getElementById('hoverBox');
-  const keyInput = document.getElementById('keyInput');
-  const displayValue = document.getElementById('displayValue');
-  const myForm = document.getElementById('myForm');
-  const errorEl = document.getElementById('error');
+section {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-  // ----- Task 0 -----
-  window.helloWorld = function() {
-    alert("Hello, JavaScript World!");
-  };
+h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
 
-  // ----- Task 1 -----
-  window.showVariables = function() {
-    let name = "Baqytzhan";
-    let age = 18;
-    let isStudent = true;
-    console.log("Name:", name);
-    console.log("Age:", age);
-    console.log("Is student:", isStudent);
-    console.log("Age + 2 =", age + 2);
-    console.log("Greeting:", "Hello " + name + "!");
-  };
+button {
+  background: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  // ----- Task 2 -----
-  window.changeText = function() {
-    document.getElementById("text").innerText = "The text has been changed!";
-  };
+button:hover {
+  background: #2980b9;
+}
 
-  // ----- Task 3 -----
-  window.changeColor = function() {
-    document.getElementById("colorBox").style.backgroundColor = "lightgreen";
-  };
-  window.changeFontSize = function() {
-    document.getElementById("colorBox").style.fontSize = "18px";
-  };
+img {
+  border-radius: 10px;
+  margin: 10px 0;
+}
 
-  // ----- Task 4 -----
-  window.addItem = function() {
-    const list = document.getElementById("itemList");
-    const newItem = document.createElement("li");
-    newItem.textContent = "New Item";
-    list.appendChild(newItem);
-  };
-  window.removeItem = function() {
-    const list = document.getElementById("itemList");
-    if (list.lastElementChild) list.removeChild(list.lastElementChild);
-  };
+#panel {
+  padding: 10px;
+  background: #ecf0f1;
+  display: none;
+  border-radius: 8px;
+}
 
-  // ----- Task 5 (Mouse Events) -----
-  if (hoverBox) {
-    hoverBox.addEventListener("mouseover", () => {
-      hoverBox.style.backgroundColor = "lightcoral";
-    });
-    hoverBox.addEventListener("mouseout", () => {
-      hoverBox.style.backgroundColor = "#f0f0f0";
-    });
-  }
+#box, #seqBox, #comboBox {
+  width: 100px;
+  height: 100px;
+  background: #e67e22;
+  margin: 10px 0;
+  border-radius: 10px;
+  position: relative;
+}
 
-  // ----- Task 6 (Keyboard Events) -----
-  if (keyInput) {
-    keyInput.addEventListener('keyup', () => {
-      displayValue.innerText = keyInput.value;
-    });
-  }
+.accordion h3 {
+  background: #3498db;
+  color: white;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
 
-  // ----- Task 7 (Form Validation) -----
-  if (myForm) {
-    myForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value.trim();
-      if (!name || !email || !password) {
-        errorEl.innerText = "Please fill in all fields!";
-        return false;
-      }
-      errorEl.innerText = "";
-      alert("Form submitted successfully!");
-      myForm.reset();
-      return true;
-    });
-  }
+.accordion .content {
+  display: none;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 6px;
+}
 
-  // ----- Task 8 (To-Do List) -----
-  const taskInput = document.getElementById('taskInput');
-  const addTaskBtn = document.getElementById('addTaskBtn');
-  const taskList = document.getElementById('taskList');
-  const taskCount = document.getElementById('taskCount');
-
-  function updateCount() {
-    const count = taskList.children.length;
-    taskCount.innerText = `Tasks: ${count}`;
-  }
-
-  window.addTask = function() {
-    const text = taskInput.value.trim();
-    if (text === "") {
-      taskInput.focus();
-      return;
-    }
-
-    const li = document.createElement('li');
-    const span = document.createElement('span');
-    span.textContent = text;
-    span.style.flex = "1";
-
-    // Toggle complete on click (except when pressing delete)
-    span.addEventListener('click', () => {
-      span.classList.toggle('completed');
-    });
-
-    const del = document.createElement('button');
-    del.className = 'task-del';
-    del.textContent = 'Delete';
-    del.addEventListener('click', () => {
-      li.remove();
-      updateCount();
-    });
-
-    li.appendChild(span);
-    li.appendChild(del);
-    taskList.appendChild(li);
-    taskInput.value = '';
-    taskInput.focus();
-    updateCount();
-  };
-
-  if (addTaskBtn) addTaskBtn.addEventListener('click', addTask);
-
-  // Allow Enter to add task
-  if (taskInput) {
-    taskInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        addTask();
-      }
-    });
-  }
-
-  // Initialize counts
-  updateCount();
-});
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
