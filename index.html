@@ -1,96 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 6 - JavaScript Basics</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jQuery Assignment #7 — Bakhytzhan Qasymgali</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Подключаем jQuery с CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>JavaScript Basics — Assignment #6</h1>
-    <p>Student: Бақытжан Қасымғали Жеңісұлы | Group: SE-2421</p>
+    <h1>Assignment #7 — jQuery</h1>
+    <p><strong>Student:</strong> Бақытжан Қасымғали Жеңісұлы | <strong>Group:</strong> SE-2421</p>
   </header>
 
-  <section id="task0">
-    <h2>Task 0: First Script</h2>
-    <button class="btn" onclick="helloWorld()">Run Script</button>
-  </section>
+  <main>
+    <!-- Task 0 -->
+    <section>
+      <h2>Task 0 — Setup</h2>
+      <button id="checkReady">Check jQuery</button>
+      <p id="readyStatus"></p>
+    </section>
 
-  <section id="task1">
-    <h2>Task 1: Variables & Operators</h2>
-    <button class="btn" onclick="showVariables()">Show Results in Console</button>
-  </section>
+    <!-- Task 1 -->
+    <section>
+      <h2>Task 1 — Selectors & CSS</h2>
+      <p id="byId">This is selected by ID</p>
+      <p class="byClass">This is selected by class</p>
+      <button id="changeText">Change Text and Style</button>
+    </section>
 
-  <section id="task2">
-    <h2>Task 2: Changing Content</h2>
-    <p id="text">This is the original text.</p>
-    <button class="btn" onclick="changeText()">Change Text</button>
-  </section>
+    <!-- Task 2 -->
+    <section>
+      <h2>Task 2 — Visibility Methods</h2>
+      <p id="text">This text will hide and show!</p>
+      <button id="hide">Hide</button>
+      <button id="show">Show</button>
+      <button id="toggle">Toggle</button>
+    </section>
 
-  <section id="task3">
-    <h2>Task 3: Changing Styles</h2>
-    <div id="colorBox">This is a colorful box.</div>
-    <div class="controls">
-      <button class="btn" onclick="changeColor()">Change Color</button>
-      <button class="btn" onclick="changeFontSize()">Change Font Size</button>
-    </div>
-  </section>
-
-  <section id="task4">
-    <h2>Task 4: Creating & Removing Elements</h2>
-    <ul id="itemList">
-      <li>Item 1</li>
-    </ul>
-    <div class="controls">
-      <button class="btn" onclick="addItem()">Add Item</button>
-      <button class="btn" onclick="removeItem()">Remove Item</button>
-    </div>
-  </section>
-
-  <section id="task5">
-    <h2>Task 5: Mouse Events</h2>
-    <div id="hoverBox">Hover over me!</div>
-  </section>
-
-  <section id="task6">
-    <h2>Task 6: Keyboard Events</h2>
-    <input type="text" id="keyInput" placeholder="Type something...">
-    <p id="displayValue" class="muted"></p>
-  </section>
-
-  <section id="task7">
-    <h2>Task 7: Form Validation (Optional)</h2>
-    <form id="myForm">
-      <input type="text" id="name" placeholder="Name"><br>
-      <input type="email" id="email" placeholder="Email"><br>
-      <input type="password" id="password" placeholder="Password"><br>
-      <button type="submit" class="btn">Submit</button>
-    </form>
-    <p id="error" class="error"></p>
-  </section>
-
-  <section id="task8">
-    <h2>Task 8: Mini Project — To-Do List</h2>
-    <div id="todoApp">
-      <div class="todo-controls">
-        <input type="text" id="taskInput" placeholder="Enter new task...">
-        <button class="btn" id="addTaskBtn">Add Task</button>
+    <!-- Task 3 -->
+    <section>
+      <h2>Task 3 — Fade Methods</h2>
+      <img id="fadeImg" src="https://picsum.photos/200" alt="Random image" />
+      <div class="btn-group">
+        <button id="fadeIn">Fade In</button>
+        <button id="fadeOut">Fade Out</button>
+        <button id="fadeToggle">Fade Toggle</button>
       </div>
-      <p id="taskCount" class="muted">Tasks: 0</p>
-      <ul id="taskList" aria-live="polite"></ul>
-    </div>
-  </section>
+    </section>
+
+    <!-- Task 4 -->
+    <section>
+      <h2>Task 4 — Slide Methods</h2>
+      <button id="slideBtn">Slide Panel</button>
+      <div id="panel">This is a sliding panel content!</div>
+    </section>
+
+    <!-- Task 5 -->
+    <section>
+      <h2>Task 5 — Add & Remove Elements</h2>
+      <ul id="itemList">
+        <li>Item 1</li>
+      </ul>
+      <button id="addItem">Add Item</button>
+      <button id="removeItem">Remove Item</button>
+    </section>
+
+    <!-- Task 6 -->
+    <section>
+      <h2>Task 6 — Modifying Attributes</h2>
+      <img id="switchImg" src="https://picsum.photos/150?random=1" />
+      <br>
+      <button id="changeSrc">Change Image</button>
+      <button id="changeLink">Change Link</button>
+      <p><a id="myLink" href="https://www.google.com" target="_blank">Visit Link</a></p>
+    </section>
+
+    <!-- Task 7 -->
+    <section>
+      <h2>Task 7 — Form Interaction</h2>
+      <form id="liveForm">
+        <input type="text" id="nameInput" placeholder="Enter your name" />
+        <input type="email" id="emailInput" placeholder="Enter your email" />
+      </form>
+      <div id="livePreview">
+        <p><strong>Name:</strong> <span id="showName"></span></p>
+        <p><strong>Email:</strong> <span id="showEmail"></span></p>
+      </div>
+    </section>
+
+    <!-- Task 8 -->
+    <section>
+      <h2>Task 8 — Basic Animation</h2>
+      <div id="box"></div>
+      <button id="animateBox">Animate Box</button>
+    </section>
+
+    <!-- Task 9 -->
+    <section>
+      <h2>Task 9 — Sequential Animations</h2>
+      <div id="seqBox"></div>
+      <button id="seqAnimate">Run Sequence</button>
+    </section>
+
+    <!-- Task 10 -->
+    <section>
+      <h2>Task 10 — Combined Animation</h2>
+      <div id="comboBox"></div>
+      <button id="comboAnimate">Combine Animation</button>
+    </section>
+
+    <!-- Task 11 -->
+    <section>
+      <h2>Task 11 — Mini Project: Accordion Menu</h2>
+      <div class="accordion">
+        <h3>Section 1</h3>
+        <div class="content">Content for section 1</div>
+        <h3>Section 2</h3>
+        <div class="content">Content for section 2</div>
+        <h3>Section 3</h3>
+        <div class="content">Content for section 3</div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>Created by Бақытжан Қасымғали | 2025</p>
+    <p>© 2025 | Created by Бақытжан Қасымғали</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
