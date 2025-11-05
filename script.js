@@ -1,88 +1,81 @@
-body {
-  font-family: "Poppins", sans-serif;
-  background: #f4f6f8;
-  margin: 0;
-  color: #333;
-  line-height: 1.6;
-}
+$(document).ready(function() {
+  console.log("jQuery is ready!");
+  
+  // Task 0
+  $("#checkReady").click(() => {
+    $("#readyStatus").text("✅ jQuery is ready!");
+  });
 
-header {
-  background: #2c3e50;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
+  // Task 1
+  $("#changeText").click(() => {
+    $("#byId").text("Changed by ID!");
+    $(".byClass").html("<b>Changed by Class!</b>");
+    $("p").css("color", "#2c3e50");
+  });
 
-section {
-  background: white;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 80%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+  // Task 2
+  $("#hide").click(() => $("#text").hide());
+  $("#show").click(() => $("#text").show());
+  $("#toggle").click(() => $("#text").toggle());
 
-h2 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
+  // Task 3
+  $("#fadeIn").click(() => $("#fadeImg").fadeIn());
+  $("#fadeOut").click(() => $("#fadeImg").fadeOut());
+  $("#fadeToggle").click(() => $("#fadeImg").fadeToggle());
 
-button {
-  background: #3498db;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  margin: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+  // Task 4
+  $("#slideBtn").click(() => $("#panel").slideToggle());
 
-button:hover {
-  background: #2980b9;
-}
+  // Task 5
+  let count = 1;
+  $("#addItem").click(() => {
+    count++;
+    $("#itemList").append(`<li>Item ${count}</li>`);
+  });
+  $("#removeItem").click(() => {
+    $("#itemList li:last").remove();
+  });
 
-img {
-  border-radius: 10px;
-  margin: 10px 0;
-}
+  // Task 6
+  $("#changeSrc").click(() => {
+    $("#switchImg").attr("src", `https://picsum.photos/150?random=${Math.random()}`);
+  });
+  $("#changeLink").click(() => {
+    $("#myLink").attr("href", "https://www.wikipedia.org").text("Go to Wikipedia");
+  });
 
-#panel {
-  padding: 10px;
-  background: #ecf0f1;
-  display: none;
-  border-radius: 8px;
-}
+  // Task 7
+  $("#nameInput, #emailInput").on("input", () => {
+    $("#showName").text($("#nameInput").val());
+    $("#showEmail").text($("#emailInput").val());
+  });
 
-#box, #seqBox, #comboBox {
-  width: 100px;
-  height: 100px;
-  background: #e67e22;
-  margin: 10px 0;
-  border-radius: 10px;
-  position: relative;
-}
+  // Task 8
+  $("#animateBox").click(() => {
+    $("#box").animate({ left: "200px", width: "150px", height: "150px" }, 1000);
+  });
 
-.accordion h3 {
-  background: #3498db;
-  color: white;
-  margin: 0;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 6px;
-}
+  // Task 9
+  $("#seqAnimate").click(() => {
+    $("#seqBox")
+      .animate({ left: "200px" }, 800)
+      .animate({ top: "100px" }, 800)
+      .animate({ width: "50px", height: "50px" }, 800)
+      .animate({ left: "0px", top: "0px", width: "100px", height: "100px" }, 800);
+  });
 
-.accordion .content {
-  display: none;
-  padding: 10px;
-  background: #ecf0f1;
-  border-radius: 6px;
-}
+  // Task 10
+  $("#comboAnimate").click(() => {
+    $("#comboBox").animate({
+      left: "150px",
+      opacity: 0.5,
+      width: "120px",
+      height: "120px"
+    }, 1000);
+  });
 
-footer {
-  background: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-}
+  // Task 11 — Accordion
+  $(".accordion h3").click(function() {
+    $(this).next(".content").slideToggle().siblings(".content").slideUp();
+  });
+});
